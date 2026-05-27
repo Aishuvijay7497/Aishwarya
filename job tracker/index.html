@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remote Job Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Job Tracker</h1>
+    <div>
+      <button id="theme-toggle">🌙</button>
+      <button id="add-job-btn">+ Add Job</button>
+    </div>
+  </header>
+<div class="filters" style="display:flex; gap:0.5rem; padding:1rem 2rem 0;">
+  <button class="filter-btn active" data-status="All">All</button>
+  <button class="filter-btn" data-status="Applied">Applied</button>
+  <button class="filter-btn" data-status="Interview">Interview</button>
+  <button class="filter-btn" data-status="Offer">Offer</button>
+</div>
+  <main id="job-grid">
+    <p style="padding:2rem; text-align:center; color:#64748b;">No jobs yet. Click "+ Add Job" to start!</p>
+  </main>
+
+  <dialog id="job-modal">
+    <form id="job-form">
+      <h2>Add New Application</h2>
+      <input type="text" id="company" placeholder="Company" required>
+      <input type="text" id="role" placeholder="Role" required>
+      <select id="status" required>
+        <option value="">Select Status</option>
+        <option value="Applied">Applied</option>
+        <option value="Interview">Interview</option>
+        <option value="Offer">Offer</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+      <input type="date" id="date" required>
+      <input type="url" id="link" placeholder="Job Link">
+      <button type="submit">Save Job</button>
+      <button type="button" id="close-modal">Cancel</button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
